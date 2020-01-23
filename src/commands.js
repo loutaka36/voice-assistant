@@ -1,10 +1,17 @@
 import {turnDeviceOn, turnDeviceOff} from './bluetooth'
+import {getTime} from './scripts'
 
 const commandList = [
   {
     regex: /hello/,
     response: {
       response: "hi there",
+    }
+  },
+  {
+    regex: /[\w\s]*time[\w\s]*/,
+    response: {
+      response: getTime(),
     }
   },
   {

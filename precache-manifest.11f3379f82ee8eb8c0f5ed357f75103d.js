@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d8c0ef5c47d0325d9ec753f0d8b5738",
+    "revision": "7a0923fe7a7156534bd75cb978ad32ad",
     "url": "/voice-assistant/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/voice-assistant/static/css/2.10a6be27.chunk.css"
   },
   {
-    "revision": "781042635f930baa3bc2",
+    "revision": "a94a704d88438bab5f34",
     "url": "/voice-assistant/static/css/main.505a8448.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/voice-assistant/static/js/2.f4768b83.chunk.js.LICENSE"
   },
   {
-    "revision": "781042635f930baa3bc2",
-    "url": "/voice-assistant/static/js/main.4e13cb92.chunk.js"
+    "revision": "a94a704d88438bab5f34",
+    "url": "/voice-assistant/static/js/main.9a6bb8e9.chunk.js"
   },
   {
     "revision": "1ec4be1c2363606c4358",

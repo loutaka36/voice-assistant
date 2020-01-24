@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/voice-assistant/static/css/main.505a8448.chunk.css",
-    "main.js": "/voice-assistant/static/js/main.4e13cb92.chunk.js",
-    "main.js.map": "/voice-assistant/static/js/main.4e13cb92.chunk.js.map",
+    "main.js": "/voice-assistant/static/js/main.9a6bb8e9.chunk.js",
+    "main.js.map": "/voice-assistant/static/js/main.9a6bb8e9.chunk.js.map",
     "runtime-main.js": "/voice-assistant/static/js/runtime-main.b509d295.js",
     "runtime-main.js.map": "/voice-assistant/static/js/runtime-main.b509d295.js.map",
     "static/css/2.10a6be27.chunk.css": "/voice-assistant/static/css/2.10a6be27.chunk.css",
     "static/js/2.f4768b83.chunk.js": "/voice-assistant/static/js/2.f4768b83.chunk.js",
     "static/js/2.f4768b83.chunk.js.map": "/voice-assistant/static/js/2.f4768b83.chunk.js.map",
     "index.html": "/voice-assistant/index.html",
-    "precache-manifest.eb1900c9668bc97e39078c5a74f34e1a.js": "/voice-assistant/precache-manifest.eb1900c9668bc97e39078c5a74f34e1a.js",
+    "precache-manifest.11f3379f82ee8eb8c0f5ed357f75103d.js": "/voice-assistant/precache-manifest.11f3379f82ee8eb8c0f5ed357f75103d.js",
     "service-worker.js": "/voice-assistant/service-worker.js",
     "static/css/2.10a6be27.chunk.css.map": "/voice-assistant/static/css/2.10a6be27.chunk.css.map",
     "static/css/main.505a8448.chunk.css.map": "/voice-assistant/static/css/main.505a8448.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.10a6be27.chunk.css",
     "static/js/2.f4768b83.chunk.js",
     "static/css/main.505a8448.chunk.css",
-    "static/js/main.4e13cb92.chunk.js"
+    "static/js/main.9a6bb8e9.chunk.js"
   ]
 }

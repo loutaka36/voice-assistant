@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/baymax/precache-manifest.e1b928fbdc03ab581d0a364bb343dd19.js"
+  "/baymax/precache-manifest.947d8a6e210d1afa5253d65b0b01da13.js"
 );
 
 self.addEventListener('message', (event) => {

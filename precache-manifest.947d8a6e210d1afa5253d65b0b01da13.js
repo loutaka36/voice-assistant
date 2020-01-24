@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "27538948684d4da3e96c5b50204049bb",
+    "revision": "47c0b37a2da6f892744331be30a39e74",
     "url": "/baymax/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/baymax/static/css/2.d73385bd.chunk.css"
   },
   {
-    "revision": "9333fd9ebc1354178098",
+    "revision": "f12f49c33e38d734f5e7",
     "url": "/baymax/static/css/main.cef8df92.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/baymax/static/js/2.ffb5a358.chunk.js.LICENSE"
   },
   {
-    "revision": "9333fd9ebc1354178098",
-    "url": "/baymax/static/js/main.ee69366d.chunk.js"
+    "revision": "f12f49c33e38d734f5e7",
+    "url": "/baymax/static/js/main.6d9bdd26.chunk.js"
   },
   {
     "revision": "c91761a7f9bd279e57cc",

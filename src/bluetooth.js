@@ -8,6 +8,7 @@ export async function connect() {
           name: 'light',
         },
       ],
+      optionalServices: [0x1111]
     })
     let server = await device.gatt.connect();
     let service = await server.getPrimaryService(0x1111);
@@ -16,6 +17,7 @@ export async function connect() {
       connectionStatus: 'Device connected'
     })
   } catch (err) {
+    console.log(err)
     this.setState({
       connectionStatus: 'Device connection failed'
     })

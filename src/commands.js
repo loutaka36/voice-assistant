@@ -3,9 +3,15 @@ import {getTime, getGreeting} from './scripts'
 
 const commandList = [
   {
-    regex: /hello|hi|howdy|yo|sup|what\'s up|hey|aloha/,
+    regex: /hello|hi|howdy|yo|sup|what's up|hey|aloha/,
     response: {
       response: getGreeting,
+    }
+  },
+  {
+    regex: /fist bump/,
+    response: {
+      response: 'FA LALALA',
     }
   },
   {
@@ -17,7 +23,14 @@ const commandList = [
   {
     regex: /[\w\s]*remind[\w\s]*me[\w\s]*|[\w\s]*set[\w\s]*reminder[\w\s]*/,
     response: {
-      response: "uh, it's not my problem that you're forgetful. why don't you go ask Siri or Alexa to do that for you",
+      response: "it's not my problem that you're forgetful. why don't you go ask Siri or Alexa to do that for you",
+    }
+  },
+  {
+    regex: /pain|hurts|hurt/,
+    response: {
+      response: "on a scale of 1 to 10, how would you rate your pain?",
+      followUpId: 2
     }
   },
   {
@@ -68,10 +81,23 @@ export const returnResponse = (inquiry) => {
 
 const followUpList = {
   1: (inquiry) => {
-    if (inquiry === "head") {
+    if (inquiry.match("head")) {
       return "put some ice on it"
     } else {
-      return "i feel bad"
+      return 'Sorry, I don\'t know about that. I think WebMD might be able to help you.'
+    }
+  },
+  2: (inquiry) => {
+    if (inquiry.match(/ten|10/)) {
+      return 'that\'s very severe. Please call an ambulance right away'
+    } else if (inquiry.match(/seven|eight|nine|7|8|9/)){
+      return 'that doesn\'t sound good. You need to go to a hopsital.'
+    } else if (inquiry.match(/four|five|six|4|5|6/)) {
+      return 'ouch. some pain medications such as advil may help. If you don\'t see improvement, I would go see a doctor.'
+    } else if (inquiry.match(/one|two|three|1|2|3/)) {
+      return 'doesn\'t seem too serious. I suggest taking it easy for now.'
+    } else {
+      return 'your response didn\'t make sense to me. I will assume that you are not hurt'
     }
   }
 }

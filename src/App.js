@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {returnResponse, returnFollowUpResponse} from './commands'
-import {connect, turnDeviceOn, turnDeviceOff} from './bluetooth'
+import {connect} from './bluetooth'
 import {Button} from 'semantic-ui-react'
 
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      displayText: 'Hi, I am Baymax, your personal assistant. Talk to me if you need anything',
+      displayText: 'Hi, I am Baymax, your personal assistant. Say "Hey Baymax" if you need anything.',
       inquiring: false,
       followUpId: null,
       connectionStatus: 'Device not connected',
@@ -146,7 +146,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    let phrase = new SpeechSynthesisUtterance("Hi, I am Baymax, your personal assistant. Talk to me if you need anything.")
+    let phrase = new SpeechSynthesisUtterance('Hi, I am Baymax, your personal assistant. Say "Hey Baymax" if you need anything.')
     this.baymax.speak(phrase)
     this.recognition.start();
   }
@@ -181,5 +181,6 @@ class App extends React.Component {
 
 export default App;
 
-{/* <button onClick={turnDeviceOn.bind(this)}>Turn on</button>
-          <button onClick={turnDeviceOff.bind(this)}>Turn off</button> */}
+/* <button onClick={turnDeviceOn.bind(this)}>Turn on</button>
+          <button onClick={turnDeviceOff.bind(this)}>Turn off</button> */
+

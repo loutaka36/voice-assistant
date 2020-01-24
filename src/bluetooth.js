@@ -17,7 +17,7 @@ export async function connect() {
       connectionStatus: 'Device connected'
     })
   } catch (err) {
-    console.log(err)
+    // console.log(err)
     this.setState({
       connectionStatus: 'Device connection failed'
     })

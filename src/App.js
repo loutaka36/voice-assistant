@@ -2,16 +2,18 @@ import React from 'react';
 import './App.css';
 import {returnResponse, returnFollowUpResponse} from './commands'
 import {connect, turnDeviceOn, turnDeviceOff} from './bluetooth'
+import {Button} from 'semantic-ui-react'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      displayText: '',
+      displayText: 'Hi, I am Baymax, your personal assistant. Talk to me if you need anything',
       inquiring: false,
       followUpId: null,
-      connectionStatus: 'Device not connected'
+      connectionStatus: 'Device not connected',
+      speechResults: ''
     }
 
     const SpeechRecognition = window.SpeechRecognition
@@ -44,6 +46,9 @@ class App extends React.Component {
     }
     recognition.onresult = async event => { //sets up logic for talking back
       const result = event.results[0][0].transcript;
+      this.setState({
+        speechResults: result
+      })
       console.log(result);
 
       if (result === 'hey' && !this.state.inquiring) { //all request must start with 'hey Baymax'
@@ -55,7 +60,7 @@ class App extends React.Component {
         })
 
       } else if (this.state.inquiring && !this.state.followUpId) { //if there is not follow up pending
-        const {response, followUpId, exec} = returnResponse(result);
+        let {response, followUpId, exec} = returnResponse(result);
         if (exec && !followUpId) { //if there is an executable and no followup Id
           let error = await exec.bind(this)()
           if (error === 'Oh no, your device got disconnected') {
@@ -108,6 +113,9 @@ class App extends React.Component {
               followUpId
             })
         } else {
+          if (typeof response === 'function') {
+            response = response()
+          }
           let phrase = new SpeechSynthesisUtterance(response)
           this.baymax.speak(phrase)
           this.setState({
@@ -143,22 +151,35 @@ class App extends React.Component {
     this.recognition.start();
   }
 
+  componentWillUnmount() {
+    this.recognition.abort()
+  }
+
   render() {
     return (
       <div className="App">
-        <div>
-          Baymax
+        <div className="baymax-container">
+          <div className="baymax"></div>
+          <div className="eyelid-top"></div>
+          <div className="eyelid-bottom"></div>
         </div>
         <div>
           {this.state.displayText}
         </div>
-        <button onClick={connect.bind(this)}>Connect To Device</button>
-        <button onClick={turnDeviceOn.bind(this)}>Turn on</button>
-        <button onClick={turnDeviceOff.bind(this)}>Turn off</button>
-        <div>{this.state.connectionStatus}</div>
+        <div className="user-input">
+          <div className="user-input_label">Your Input:</div>
+          <div className="user-input_results">{this.state.speechResults}</div>
+        </div>
+        <div>
+          <Button onClick={connect.bind(this)}>Connect To Device</Button>
+          <div className="connection-status">{this.state.connectionStatus}</div>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+{/* <button onClick={turnDeviceOn.bind(this)}>Turn on</button>
+          <button onClick={turnDeviceOff.bind(this)}>Turn off</button> */}

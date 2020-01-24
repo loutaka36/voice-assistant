@@ -1,17 +1,29 @@
 import {turnDeviceOn, turnDeviceOff} from './bluetooth'
-import {getTime} from './scripts'
+import {getTime, getGreeting} from './scripts'
 
 const commandList = [
   {
-    regex: /hello/,
+    regex: /hello|hi|howdy|yo|sup|what\'s up|hey|aloha/,
     response: {
-      response: "hi there",
+      response: getGreeting,
+    }
+  },
+  {
+    regex: /[\w\s]*directions[\w\s]*to[\w\s]*|[\w\s]*navigate[\w\s]*to[\w\s]*/,
+    response: {
+      response: "um, I'm not google maps, you can figure that out yourself",
+    }
+  },
+  {
+    regex: /[\w\s]*remind[\w\s]*me[\w\s]*|[\w\s]*set[\w\s]*reminder[\w\s]*/,
+    response: {
+      response: "uh, it's not my problem that you're forgetful. why don't you go ask Siri or Alexa to do that for you",
     }
   },
   {
     regex: /[\w\s]*time[\w\s]*/,
     response: {
-      response: getTime(),
+      response: getTime,
     }
   },
   {
@@ -21,7 +33,7 @@ const commandList = [
     }
   },
   {
-    regex: /I feel sick/,
+    regex: /[\w\s]*sick[\w\s]*/,
     response: {
       response: "oh no, what are you symptoms?",
       followUpId: 1

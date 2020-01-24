@@ -21,3 +21,9 @@ export const getTime = () => {
 
   return `It's currently ${hour}:${minutes} ${timeOfDay}`
 }
+
+export const getGreeting = () => {
+  const greetings = ['hi there', 'yo yo yo', 'aloha', 'what\'s good', 'howdy', 'greetings human']
+  return greetings[Math.floor(Math.random() * greetings.length)]
+}
+

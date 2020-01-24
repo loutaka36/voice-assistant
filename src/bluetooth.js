@@ -1,4 +1,4 @@
-//function for bluetooth connections
+//function for bluetooth connections used in App.js
 
 export async function connect() {
   try {

@@ -1,5 +1,5 @@
 import {turnDeviceOn, turnDeviceOff} from './bluetooth'
-import {getTime, getGreeting} from './scripts'
+import {getTime, getGreeting, powerDown} from './scripts'
 
 const commandList = [
   {
@@ -29,7 +29,7 @@ const commandList = [
   {
     regex: /pain|hurts|hurt/,
     response: {
-      response: "on a scale of 1 to 10, how would you rate your pain?",
+      response: 'on a scale of 1 to 10, how would you rate your pain?',
       followUpId: 2
     }
   },
@@ -64,6 +64,13 @@ const commandList = [
     response: {
       response: "ok, I'll turn them off",
       exec: turnDeviceOff
+    }
+  },
+  {
+    regex: /[\w\s]*power[\w\s]*down[\w\s]*|[\w\s]*power[\w\s]*off[\w\s]*/,
+    response: {
+      response: "goodbye",
+      exec: powerDown
     }
   },
 ]

@@ -27,3 +27,8 @@ export const getGreeting = () => {
   return greetings[Math.floor(Math.random() * greetings.length)]
 }
 
+export function powerDown() {
+  this.setState({
+    poweredOn: false
+  })
+}

@@ -64,9 +64,27 @@
   z-index: 98;
 }
 
+.eyelid-top-inactive {
+  position: relative;
+  top: 19%;
+  background: #fff;
+  width: 690px;
+  height: 80px;
+  z-index: 98;
+}
+
 .eyelid-bottom {
   animation: blink-bottom 10s infinite;
   position: relative;
+  background: #fff;
+  width: 690px;
+  height: 80px;
+  z-index: 98;
+}
+
+.eyelid-bottom-inactive {
+  position: relative;
+  bottom: -23%;
   background: #fff;
   width: 690px;
   height: 80px;

@@ -9,11 +9,12 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      displayText: 'Hi, I am Baymax, your personal assistant. Say "Hey Baymax" if you need anything.',
+      displayText: '',
       inquiring: false,
       followUpId: null,
       connectionStatus: 'Device not connected',
-      speechResults: ''
+      speechResults: '',
+      poweredOn: false
     }
 
     const SpeechRecognition = window.SpeechRecognition
@@ -30,6 +31,7 @@ class App extends React.Component {
     }
 
     this.characteristic = null;
+    this.handlePower = this.handlePower.bind(this)
   }
 
   createRecognition(SpeechRecognition) {
@@ -42,7 +44,9 @@ class App extends React.Component {
     }
     recognition.onend = () => {
       console.log("Stopping");
-      this.recognition.start();
+      if (this.state.poweredOn) {
+        this.recognition.start();
+      }
     }
     recognition.onresult = async event => { //sets up logic for talking back
       const result = event.results[0][0].transcript;
@@ -51,7 +55,7 @@ class App extends React.Component {
       })
       console.log(result);
 
-      if (result === 'hey' && !this.state.inquiring) { //all request must start with 'hey Baymax'
+      if (result === 'hi' && !this.state.inquiring) { //all request must start with 'hey Baymax'
         let phrase = new SpeechSynthesisUtterance('yes?')
         this.baymax.speak(phrase)
         this.setState({
@@ -141,27 +145,52 @@ class App extends React.Component {
 
   createBaymaxVoice() { //creates speech synthesis object
     const baymax = window.speechSynthesis
-
     return baymax;
-  }
-
-  componentDidMount() {
-    let phrase = new SpeechSynthesisUtterance('Hi, I am Baymax, your personal assistant. Say "Hey Baymax" if you need anything.')
-    this.baymax.speak(phrase)
-    this.recognition.start();
   }
 
   componentWillUnmount() {
     this.recognition.abort()
   }
 
+  handlePower() {
+    if (this.state.poweredOn) {
+      this.recognition.stop()
+      let phrase = new SpeechSynthesisUtterance('goodbye')
+      this.baymax.speak(phrase)
+      this.setState({
+        poweredOn: false,
+        displayText: 'goodbye',
+        speechResults: ''
+      })
+    } else {
+      this.recognition.start()
+      let phrase = new SpeechSynthesisUtterance('Hi, I am Baymax, your personal assistant. Say "Hey Baymax" if you need anything.')
+      this.baymax.speak(phrase)
+      this.setState({
+        poweredOn: true,
+        displayText: 'Hi, I am Baymax, your personal assistant. Say "Hey Baymax" if you need anything.',
+        speechResults: ''
+      })
+    }
+  }
+
   render() {
+    let topEyelid
+    let bottomEyelid
+    if (this.state.poweredOn) {
+      topEyelid = "eyelid-top"
+      bottomEyelid = "eyelid-bottom"
+    } else {
+      topEyelid = "eyelid-top-inactive"
+      bottomEyelid = "eyelid-bottom-inactive"
+    }
+
     return (
       <div className="App">
         <div className="baymax-container">
           <div className="baymax"></div>
-          <div className="eyelid-top"></div>
-          <div className="eyelid-bottom"></div>
+          <div className={topEyelid}></div>
+          <div className={bottomEyelid}></div>
         </div>
         <div>
           {this.state.displayText}
@@ -170,6 +199,7 @@ class App extends React.Component {
           <div className="user-input_label">Your Input:</div>
           <div className="user-input_results">{this.state.speechResults}</div>
         </div>
+        <Button className="power" onClick={this.handlePower}>{this.state.poweredOn ? 'Shut Down' : "Power On"}</Button>
         <div>
           <Button onClick={connect.bind(this)}>Connect To Device</Button>
           <div className="connection-status">{this.state.connectionStatus}</div>
@@ -180,7 +210,4 @@ class App extends React.Component {
 }
 
 export default App;
-
-/* <button onClick={turnDeviceOn.bind(this)}>Turn on</button>
-          <button onClick={turnDeviceOff.bind(this)}>Turn off</button> */
 

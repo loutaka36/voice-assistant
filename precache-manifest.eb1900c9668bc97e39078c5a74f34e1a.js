@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "623c6e99c45716a37301ae2465a958fc",
+    "revision": "1d8c0ef5c47d0325d9ec753f0d8b5738",
     "url": "/voice-assistant/index.html"
   },
   {
-    "revision": "840250189e767c5430ed",
+    "revision": "c9fa005cc6ee407c97cc",
     "url": "/voice-assistant/static/css/2.10a6be27.chunk.css"
   },
   {
-    "revision": "4471dbe070a36ed4e306",
-    "url": "/voice-assistant/static/css/main.cef8df92.chunk.css"
+    "revision": "781042635f930baa3bc2",
+    "url": "/voice-assistant/static/css/main.505a8448.chunk.css"
   },
   {
-    "revision": "840250189e767c5430ed",
-    "url": "/voice-assistant/static/js/2.ffb5a358.chunk.js"
+    "revision": "c9fa005cc6ee407c97cc",
+    "url": "/voice-assistant/static/js/2.f4768b83.chunk.js"
   },
   {
     "revision": "3d9880ee0da2a100dc4a6223e0aed39a",
-    "url": "/voice-assistant/static/js/2.ffb5a358.chunk.js.LICENSE"
+    "url": "/voice-assistant/static/js/2.f4768b83.chunk.js.LICENSE"
   },
   {
-    "revision": "4471dbe070a36ed4e306",
-    "url": "/voice-assistant/static/js/main.845459e2.chunk.js"
+    "revision": "781042635f930baa3bc2",
+    "url": "/voice-assistant/static/js/main.4e13cb92.chunk.js"
   },
   {
     "revision": "1ec4be1c2363606c4358",

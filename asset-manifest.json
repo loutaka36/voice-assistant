@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/voice-assistant/static/css/main.cef8df92.chunk.css",
-    "main.js": "/voice-assistant/static/js/main.845459e2.chunk.js",
-    "main.js.map": "/voice-assistant/static/js/main.845459e2.chunk.js.map",
+    "main.css": "/voice-assistant/static/css/main.505a8448.chunk.css",
+    "main.js": "/voice-assistant/static/js/main.4e13cb92.chunk.js",
+    "main.js.map": "/voice-assistant/static/js/main.4e13cb92.chunk.js.map",
     "runtime-main.js": "/voice-assistant/static/js/runtime-main.b509d295.js",
     "runtime-main.js.map": "/voice-assistant/static/js/runtime-main.b509d295.js.map",
     "static/css/2.10a6be27.chunk.css": "/voice-assistant/static/css/2.10a6be27.chunk.css",
-    "static/js/2.ffb5a358.chunk.js": "/voice-assistant/static/js/2.ffb5a358.chunk.js",
-    "static/js/2.ffb5a358.chunk.js.map": "/voice-assistant/static/js/2.ffb5a358.chunk.js.map",
+    "static/js/2.f4768b83.chunk.js": "/voice-assistant/static/js/2.f4768b83.chunk.js",
+    "static/js/2.f4768b83.chunk.js.map": "/voice-assistant/static/js/2.f4768b83.chunk.js.map",
     "index.html": "/voice-assistant/index.html",
-    "precache-manifest.37c90e9165e0d8f9f6ae5ee879ca97b3.js": "/voice-assistant/precache-manifest.37c90e9165e0d8f9f6ae5ee879ca97b3.js",
+    "precache-manifest.eb1900c9668bc97e39078c5a74f34e1a.js": "/voice-assistant/precache-manifest.eb1900c9668bc97e39078c5a74f34e1a.js",
     "service-worker.js": "/voice-assistant/service-worker.js",
     "static/css/2.10a6be27.chunk.css.map": "/voice-assistant/static/css/2.10a6be27.chunk.css.map",
-    "static/css/main.cef8df92.chunk.css.map": "/voice-assistant/static/css/main.cef8df92.chunk.css.map",
-    "static/js/2.ffb5a358.chunk.js.LICENSE": "/voice-assistant/static/js/2.ffb5a358.chunk.js.LICENSE",
+    "static/css/main.505a8448.chunk.css.map": "/voice-assistant/static/css/main.505a8448.chunk.css.map",
+    "static/js/2.f4768b83.chunk.js.LICENSE": "/voice-assistant/static/js/2.f4768b83.chunk.js.LICENSE",
     "static/media/semantic.min.css": "/voice-assistant/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.b509d295.js",
     "static/css/2.10a6be27.chunk.css",
-    "static/js/2.ffb5a358.chunk.js",
-    "static/css/main.cef8df92.chunk.css",
-    "static/js/main.845459e2.chunk.js"
+    "static/js/2.f4768b83.chunk.js",
+    "static/css/main.505a8448.chunk.css",
+    "static/js/main.4e13cb92.chunk.js"
   ]
 }

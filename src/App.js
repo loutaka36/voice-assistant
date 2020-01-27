@@ -55,7 +55,7 @@ class App extends React.Component {
       })
       console.log(result);
 
-      if (result === 'hey Baymax' && !this.state.inquiring) { //all request must start with 'hey Baymax'
+      if (result === 'hi' && !this.state.inquiring) { //all request must start with 'hey Baymax'
         let phrase = new SpeechSynthesisUtterance('yes?')
         this.baymax.speak(phrase)
         this.setState({

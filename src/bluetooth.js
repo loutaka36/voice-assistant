@@ -5,14 +5,15 @@ export async function connect() {
     let device = await navigator.bluetooth.requestDevice({
       filters: [
         {
-          name: 'light',
+          services: [0x1111], //'00010203-0405-0607-0809-0a0b0c0d1911'
         },
       ],
-      optionalServices: [0x1111]
+      // optionalServices: ['00010203-0405-0607-0809-0a0b0c0d1910']
     })
     let server = await device.gatt.connect();
     let service = await server.getPrimaryService(0x1111);
     this.characteristic = await service.getCharacteristic(0x2222);
+    console.log(this.characteristic)
     this.setState({
       connectionStatus: 'Device connected'
     })
@@ -28,8 +29,9 @@ export async function connect() {
 export async function turnDeviceOn() {
   try {
     await this.characteristic.writeValue(
-      new Uint8Array([0xff, 0xff])
+      new Uint8Array([0x01])
     )
+    console.log(this.characteristic)
   } catch (err) {
     if (err.name === 'TypeError') {
       return 'Oh no, looks like you don\'t have a device connected. Try connecting one and try again'
@@ -42,9 +44,10 @@ export async function turnDeviceOn() {
 //sends bytes to connected bluetooth device (off position)
 export async function turnDeviceOff() {
   try {
-    await this.characteristic.writeValue(
+    const val = await this.characteristic.writeValue(
       new Uint8Array([0x00, 0x00])
     )
+    console.log(val)
   } catch (err) {
     if (err.name === 'TypeError') {
       return 'Oh no, looks like you don\'t have a device connected. Try connecting one and try again'

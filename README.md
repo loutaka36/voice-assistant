@@ -1,61 +1,39 @@
+# Baymax - your personal assistant
 
-## Voice Assistant with bluetooth device connectivity
+## A Voice Assistant That Talks To You
 
-### `Voice recognition`
+Meet Baymax, your personal assistant. You can ask him anything by saying "Hey Baymax". He handles a variety of health related questions as well as the ability to handle bluetooth connected devices.
 
-This app uses the browser's SpeechRecognition API to recognize a user's speech input.
+<image alt="main page" src="./main.png" width="300px">
 
-### `npm test`
+This project was built using Google Chrome’s SpeechRecognition API, SpeechSynthesis API, and Web Bluetooth API.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+* Takes advantage of Google Chrome's SpeechRecognition API to convert speech to a string and uses regular expressions to find key words to formulate a response.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Uses Google Chrome's SpeechSynthesis API to return an audible response to the user.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Google Chrome's Web Bluetooth API allows bluetooth peripherals to be connected to the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo
 
-### `npm run eject`
+Please go [here](https://loutaka36.github.io/voice-assistant/) for a demo of the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note: you must be using Google Chrome or another compatible browser to run the application**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Running From Source
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clone this repository. You must have node and npm installed globally on your machine.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Installation:
 
-## Learn More
+`npm install`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start application:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm run start`
 
-### Code Splitting
+## Project Information
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project was built during a four day hackathon at [Fullstack Academy](https://www.fullstackacademy.com) in Chicago. Explore a new technology and built an app in a short amount of time.
